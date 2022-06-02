@@ -1,7 +1,7 @@
 class Board
 
-    def initialize
-        @board = Array.new(3) {Array.new(3, '_')}
+    def initialize(n)
+        @board = Array.new(n) {Array.new(n, '_')}
     end
 
     def valid?(pos)
@@ -23,6 +23,7 @@ class Board
             @board[row][col] = mark
         else
             raise "invalid position or already taken"
+            return false
         end
     end
 
